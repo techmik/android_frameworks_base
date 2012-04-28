@@ -1656,7 +1656,8 @@ public class Camera {
         private static final String KEY_SCENE_DETECT = "scene-detect";
         private static final String KEY_FLASH_MODE = "flash-mode";
         private static final String KEY_FOCUS_MODE = "focus-mode";
-		private static final String KEY_ISO_MODE = "iso";
+        private static final String KEY_TIMER_MODE = "timer-mode";
+        private static final String KEY_ISO_MODE = "iso";
         private static final String KEY_LENSSHADE = "lensshade";
         private static final String KEY_HISTOGRAM = "histogram";
         private static final String KEY_SKIN_TONE_ENHANCEMENT = "skinToneEnhancement";
@@ -1703,7 +1704,7 @@ public class Camera {
         private static final String KEY_SELECTABLE_ZONE_AF = "selectable-zone-af";
         private static final String KEY_FACE_DETECTION = "face-detection";
         private static final String KEY_MEMORY_COLOR_ENHANCEMENT = "mce";
-	private static final String KEY_REDEYE_REDUCTION = "redeye-reduction";
+        private static final String KEY_REDEYE_REDUCTION = "redeye-reduction";
         private static final String KEY_ZSL = "zsl";
         private static final String KEY_CAMERA_MODE = "camera-mode";
         private static final String KEY_VIDEO_HIGH_FRAME_RATE = "video-hfr";
@@ -1989,6 +1990,16 @@ public class Camera {
          * #autoFocus(AutoFocusCallback)} in this mode.
          */
         public static final String FOCUS_MODE_EDOF = "edof";
+
+        /**
+         * Settings for timer mode.
+         */
+        public static final String TIMER_MODE_0 = "0";
+        public static final String TIMER_MODE_5 = "5";
+        public static final String TIMER_MODE_10 = "10";
+        public static final String TIMER_MODE_15 = "15";
+        public static final String TIMER_MODE_20 = "20";
+        public static final String TIMER_MODE_30 = "30";
 
         /**
          * Continuous auto focus mode intended for video recording. The camera
@@ -3457,6 +3468,44 @@ public class Camera {
             String str = get(KEY_FOCUS_MODE + SUPPORTED_VALUES_SUFFIX);
             return split(str);
         }
+
+        /**
+         * Gets the current timer mode setting.
+         *
+         * @return current timer mode. null if not supported.
+         * @see #TIMER_MODE_0
+         * @see #TIMER_MODE_5
+         * @see #TIMER_MODE_10
+         * @see #TIMER_MODE_15
+         * @see #TIMER_MODE_20
+         * @see #TIMER_MODE_30
+         */
+        public String getTimerMode() {
+            return get(KEY_TIMER_MODE);
+        }
+
+        /**
+         * Sets the timer mode.
+         *
+         * @param value timer mode.
+         * @see #getTimerMode()
+         */
+        public void setTimerMode(String value) {
+            set(KEY_TIMER_MODE, value);
+        }
+
+        /**
+         * Gets the supported timer modes.
+         *
+         * @return a list of supported timer modes. This method will always
+         *         return a list with at least one element.
+         * @see #getTimerMode()
+         */
+        public List<String> getSupportedTimerModes() {
+            String str = get(KEY_TIMER_MODE + SUPPORTED_VALUES_SUFFIX);
+            return split(str);
+        }
+
 
         /**
          * Gets the focal length (in millimeter) of the camera.

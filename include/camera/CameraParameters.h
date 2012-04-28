@@ -318,6 +318,12 @@ public:
     // Supported focus modes.
     // Example value: "auto,macro,fixed". Read only.
     static const char KEY_SUPPORTED_FOCUS_MODES[];
+    // Current timer mode.
+    // Example value: "0". Represents number of seconds to delay snap. Read/write.
+    static const char KEY_TIMER_MODE[];
+    // Supported timer modes.
+    // Example value: "0, 5, 10". Read only.
+    static const char KEY_SUPPORTED_TIMER_MODES[];
     // The maximum number of focus areas supported. This is the maximum length
     // of KEY_FOCUS_AREAS.
     // Example value: "0" or "2". Read only.
@@ -775,6 +781,14 @@ public:
     // continuously. Applications should not call
     // CameraHardwareInterface.autoFocus in this mode.
     static const char FOCUS_MODE_EDOF[];
+    // Values for timer mode settings.
+    // Number of seconds to delay before snap.
+    static const char TIMER_MODE_0[];
+    static const char TIMER_MODE_5[];
+    static const char TIMER_MODE_10[];
+    static const char TIMER_MODE_15[];
+    static const char TIMER_MODE_20[];
+    static const char TIMER_MODE_30[];
     // Continuous auto focus mode intended for video recording. The camera
     // continuously tries to focus. This is the best choice for video
     // recording because the focus changes smoothly . Applications still can

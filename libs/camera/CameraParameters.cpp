@@ -94,6 +94,8 @@ const char CameraParameters::KEY_FLASH_MODE[] = "flash-mode";
 const char CameraParameters::KEY_SUPPORTED_FLASH_MODES[] = "flash-mode-values";
 const char CameraParameters::KEY_FOCUS_MODE[] = "focus-mode";
 const char CameraParameters::KEY_SUPPORTED_FOCUS_MODES[] = "focus-mode-values";
+const char CameraParameters::KEY_TIMER_MODE[] = "timer-mode";
+const char CameraParameters::KEY_SUPPORTED_TIMER_MODES[] = "timer-mode-values";
 const char CameraParameters::KEY_MAX_NUM_FOCUS_AREAS[] = "max-num-focus-areas";
 const char CameraParameters::KEY_FOCUS_AREAS[] = "focus-areas";
 const char CameraParameters::KEY_FOCAL_LENGTH[] = "focal-length";
@@ -264,6 +266,14 @@ const char CameraParameters::FOCUS_MODE_CONTINUOUS_PICTURE[] = "continuous-pictu
 #ifdef QCOM_HARDWARE
 const char CameraParameters::FOCUS_MODE_CONTINUOUS_CAMERA[] = "continuous-camera";
 const char CameraParameters::FOCUS_MODE_NORMAL[] = "normal";
+
+// Values for timer mode settings.
+const char CameraParameters::TIMER_MODE_0[] = "0";
+const char CameraParameters::TIMER_MODE_5[] = "5";
+const char CameraParameters::TIMER_MODE_10[] = "10";
+const char CameraParameters::TIMER_MODE_15[] = "15";
+const char CameraParameters::TIMER_MODE_20[] = "20";
+const char CameraParameters::TIMER_MODE_30[] = "30";
 
 
 const char CameraParameters::KEY_SKIN_TONE_ENHANCEMENT[] = "skinToneEnhancement";
