@@ -1656,6 +1656,7 @@ public class Camera {
         private static final String KEY_SCENE_DETECT = "scene-detect";
         private static final String KEY_FLASH_MODE = "flash-mode";
         private static final String KEY_FOCUS_MODE = "focus-mode";
+        private static final String KEY_CAPTURE_MODE = "capture-mode";
 		private static final String KEY_ISO_MODE = "iso";
         private static final String KEY_LENSSHADE = "lensshade";
         private static final String KEY_HISTOGRAM = "histogram";
@@ -3457,6 +3458,35 @@ public class Camera {
             String str = get(KEY_FOCUS_MODE + SUPPORTED_VALUES_SUFFIX);
             return split(str);
         }
+
+        /**
+         * Gets the current capture mode setting.
+         *
+         */
+        public String getCaptureMode() {
+            return get(KEY_CAPTURE_MODE);
+        }
+
+        /**
+         * Sets the capture mode.
+         *
+         */
+        public void setCaptureMode(String value) {
+            set(KEY_CAPTURE_MODE, value);
+        }
+
+        /**
+         * Gets the supported capture modes.
+         *
+         * @return a list of supported capture modes. This method will always
+         *         return a list with at least one element.
+         * @see #getCaptureMode()
+         */
+        public List<String> getSupportedCaptureModes() {
+            String str = get(KEY_CAPTURE_MODE + SUPPORTED_VALUES_SUFFIX);
+            return split(str);
+        }
+
 
         /**
          * Gets the focal length (in millimeter) of the camera.
