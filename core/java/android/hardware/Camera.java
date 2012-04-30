@@ -1992,6 +1992,36 @@ public class Camera {
         public static final String FOCUS_MODE_EDOF = "edof";
 
         /**
+         * Immediate capture mode.
+         */
+        public static final String CAPTURE_MODE_0 = "0";
+
+        /**
+         * Delay 5 seconds capture mode.
+         */
+        public static final String CAPTURE_MODE_5 = "5";
+
+        /**
+         * Delay 10 seconds capture mode.
+         */
+        public static final String CAPTURE_MODE_10 = "10";
+
+        /**
+         * Delay 15 seconds capture mode.
+         */
+        public static final String CAPTURE_MODE_15 = "15";
+
+        /**
+         * Delay 20 seconds capture mode.
+         */
+        public static final String CAPTURE_MODE_20 = "20";
+
+        /**
+         * Delay 30 seconds capture mode.
+         */
+        public static final String CAPTURE_MODE_30 = "30";
+
+        /**
          * Continuous auto focus mode intended for video recording. The camera
          * continuously tries to focus. This is the best choice for video
          * recording because the focus changes smoothly . Applications still can
