@@ -336,6 +336,10 @@
          a car dock make the accelerometer more a physical input (like a lid). -->
     <bool name="config_carDockEnablesAccelerometer">true</bool>
 
+    <!-- Control whether accelerometer should be enabled for the lockscreen.
+         This defaults to false because that has always been the default. -->
+    <bool name="config_autorotateLockscreen">false</bool>
+
     <!-- Indicate whether the lid state impacts the accessibility of
          the physical keyboard.  0 means it doesn't, 1 means it is accessible
          when the lid is open, 2 means it is accessible when the lid is
