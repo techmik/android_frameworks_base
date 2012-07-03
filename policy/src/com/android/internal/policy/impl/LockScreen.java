@@ -88,6 +88,8 @@ class LockScreen extends LinearLayout implements KeyguardScreen {
     private UnlockWidgetCommonMethods mUnlockWidgetMethods;
     private View mUnlockWidget;
 
+    boolean mAutorotateLockscreen;
+
     private interface UnlockWidgetCommonMethods {
         // Update resources based on phone state
         public void updateResources();
@@ -361,6 +363,16 @@ class LockScreen extends LinearLayout implements KeyguardScreen {
         }
 
         public void onTrigger(View v, int target) {
+
+            mAutorotateLockscreen = (Settings.System.getInt(
+                mContext.getContentResolver(),
+                Settings.System.ACCELEROMETER_ROTATION, 0) == 1);
+
+                    if (mAutorotateLockscreen) {
+                        Settings.System.putInt(getContentResolver, Settings.System.AUTOROTATE_LOCKSCREEN,
+                            Settings.System.CAR_DOCK_ENABLES_ACCELEROMETER);
+                    }
+
             if (mStoredTargets == null) {
                 if (target == 0 || target == 1) { // 0 = unlock/portrait, 1 = unlock/landscape
                     mCallback.goToUnlockScreen();
