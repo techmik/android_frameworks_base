@@ -88,6 +88,8 @@ class LockScreen extends LinearLayout implements KeyguardScreen {
     private UnlockWidgetCommonMethods mUnlockWidgetMethods;
     private View mUnlockWidget;
 
+    boolean mAutorotateLockscreen;
+
     private interface UnlockWidgetCommonMethods {
         // Update resources based on phone state
         public void updateResources();
@@ -358,6 +360,13 @@ class LockScreen extends LinearLayout implements KeyguardScreen {
 
         public void onReleased(View v, int handle) {
 
+        }
+
+        private void toggleAutorotateLockscreen() {
+            // toggle whether lockscreen will autorotate.
+            mAutorotateLockscreen = Settings.System.putInt(
+                    mContext.getContentResolver(),
+                    Settings.System.ACCELEROMETER_ROTATION, 1);
         }
 
         public void onTrigger(View v, int target) {
